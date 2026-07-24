@@ -48,6 +48,14 @@ def test_agregar_item_contiene_el_item():
 # Recuerda: def test_nombre_descriptivo(): + assert
 
 # Test 1:
+def test_login_credenciales_correctas():
+    """Si usuario y clave coinciden, login debe devolver True."""
+    resultado = login("carlos", "carlos")
+    assert resultado is True
 
 
 # Test 2:
+def test_procesar_pedido_vip_con_descuento():
+    """Un pedido tipo A, con monto alto, descuento y cliente VIP debe aplicar el factor 0.8."""
+    resultado = procesar_pedido("A", 200, 10, "VIP", "2026-01-01", "Norte", "Juan")
+    assert resultado == 160.0
